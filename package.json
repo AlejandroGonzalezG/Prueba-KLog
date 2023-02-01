@@ -1,0 +1,29 @@
+{
+  "name": "ejerciciosequelizecli",
+  "version": "1.0.0",
+  "description": "Ejercicio con Node.js + Express con Sequelize CLI y Mysql",
+  "main": "app/server.js",
+  "scripts": {
+    "dev": "nodemon app/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlejandroGonzalezG/ejerciciosequelize-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlejandroGonzalezG/ejerciciosequelize-cli/issues"
+  },
+  "homepage": "https://github.com/AlejandroGonzalezG/ejerciciosequelize-cli#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.1.0",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.28.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.0"
+  }
+}
