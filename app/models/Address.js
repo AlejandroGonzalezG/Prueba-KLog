@@ -1,5 +1,6 @@
 'use strict';
 const { Model } = require('sequelize');
+const User = require('./User')
 
 
 module.exports = (sequelize, DataTypes) => {
@@ -11,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Address.belongsTo(models.User, { as: "residente", foreignKey: "user_id" })
     }
   }
   Address.init({
@@ -20,4 +22,4 @@ module.exports = (sequelize, DataTypes) => {
     modelName: 'address',
   });
   return Address;
-};
+}; 

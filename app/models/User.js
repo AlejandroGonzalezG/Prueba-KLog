@@ -1,6 +1,6 @@
 'use strict';
 const { Model } = require('sequelize');
-
+const Address = require('./Address')
 
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.hasOne(models.Address, { as: "domicilio", foreignKey: "user_id" });
     }
   }
   User.init({

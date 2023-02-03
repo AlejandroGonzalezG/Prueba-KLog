@@ -1,5 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const config = require('../../config/database')
+const config = require('../../config/database');
+const User = require('../models/User');
 const db = {}
 
 db.connection = new Sequelize(config.database, config.username, config.password, config);
@@ -7,5 +8,9 @@ db.connection = new Sequelize(config.database, config.username, config.password,
 // Vinculamos a nuestros modelos a DB
 db.User = require('../models/User')(db.connection, DataTypes);
 db.Address = require('../models/Address')(db.connection, DataTypes);
+
+// Asociar los modelos
+db.User.associate(db);
+db.Address.associate(db);
 
 module.exports = db;
