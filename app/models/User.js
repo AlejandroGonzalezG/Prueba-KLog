@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     age: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'user',
+    modelName: 'User',
   });
   return User;
 }; 

@@ -7,11 +7,11 @@ module.exports = {
   async up(queryInterface, Sequelize) {
 
     await queryInterface.bulkInsert('users', [
-      { name: 'Anton', age: 18 },
-      { name: 'Robert', age: 28 },
-      { name: 'Daniel', age: 38 },
-      { name: 'Ariel', age: 11 },
-      { name: 'Pamela', age: 58 },
+      { name: 'Anton', age: 18, createdAt: new Date(), updatedAt: new Date() },
+      { name: 'Robert', age: 28 , createdAt: new Date(), updatedAt: new Date()},
+      { name: 'Daniel', age: 38 , createdAt: new Date(), updatedAt: new Date()},
+      { name: 'Ariel', age: 11, createdAt: new Date(), updatedAt: new Date() },
+      { name: 'Pamela', age: 58 , createdAt: new Date(), updatedAt: new Date()},
     ], {});
 
   },
