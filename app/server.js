@@ -3,7 +3,7 @@ const app = express();
 const { connection } = require('./database/db');
 
 // Setting
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 // Para poder rellenar el req.body
