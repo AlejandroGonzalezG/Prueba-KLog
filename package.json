@@ -4,7 +4,8 @@
   "description": "Ejercicio con Node.js + Express con Sequelize CLI y Mysql",
   "main": "app/server.js",
   "scripts": {
-    "dev": "nodemon app/server.js"
+    "dev": "nodemon app/server.js",
+    "build": "npm install && npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
   },
   "repository": {
     "type": "git",
