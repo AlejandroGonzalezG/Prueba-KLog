@@ -21,11 +21,11 @@ const getTransportes = async (req, res) => {
 
 const getTransporteDestino = async (req, res) => {
     try {
-        const destino = await Pod.findOne({ 
-            where: { locode: req.body.destino}, 
+        const origen = await Pod.findOne({ 
+            where: { locode: req.body.origen}, 
             attributes: ['locode'],
            })
-        res.json({ Origen: destino.locode,})
+        res.json({ Origen: origen.locode,})
     } catch (error) {
         res.json({ message: "Ha ocurrido un error"})
     }
