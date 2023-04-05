@@ -1,9 +1,9 @@
 'use strict';
-const { Model } = require('sequelize');
-const Address = require('./Address')
-
+const {
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class User extends Model {
+  class Pod extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,15 +11,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      User.hasOne(models.Address, { as: "domicilio", foreignKey: "user_id" });
+      this.hasMany(models.Transporte, { as: 'pod', foreignKey: 'pod_id'})
     }
   }
-  User.init({
+  Pod.init({
     name: DataTypes.STRING,
-    age: DataTypes.INTEGER
+    locode: DataTypes.STRING,
+    longitude: DataTypes.FLOAT,
+    latitude: DataTypes.FLOAT
   }, {
     sequelize,
-    modelName: 'User',
+    modelName: 'Pod',
+    freezeTableName: true,
+    timestamps: false
   });
-  return User;
-}; 
+  return Pod;
+};

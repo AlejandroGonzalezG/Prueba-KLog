@@ -2,16 +2,33 @@ const express = require('express');
 const router = express.Router();
 
 // Importar controladores
-const UserController = require('./controllers/UserController');
-const AddressController = require('./controllers/AddressController')
+
+const TransporteController = require('./controllers/TransporteController');
+const CarrierController = require('./controllers/CarrierController')
+const PolController = require('./controllers/PolController')
+const PodController = require('./controllers/PodController')
 
 // Home
-router.get('/', (req, res) => res.json({ foo : "bar"}));
+router.get('/', (req, res) => res.json({ 
+    message : "Prueba Técnica para KLog",
+    endpoints: "/transportes, /carriers, /pols, /pods"}));
 
-// Users
-router.get('/users', UserController.all);
+// Transportes
+router.get('/transportes', TransporteController.getTransportes)
+router.get('/transportes/destino', TransporteController.getTransporteDestino)
+router.post('/transportes', TransporteController.postTransporte)
 
-// Addresses
-router.get('/addresses', AddressController.all)
+// Carrier
+router.get('/carriers', CarrierController.getCarriers)
+router.post('/carriers', CarrierController.postCarrier)
+
+// Pol
+router.get('/pols', PolController.getPols)
+router.post('/pols', PolController.postPol)
+
+// Pod
+router.get('/pods', PodController.getPods)
+router.post('/pods', PodController.postPod)
+
 
 module.exports = router;

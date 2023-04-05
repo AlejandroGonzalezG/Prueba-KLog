@@ -1,16 +1,19 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const config = require('../../config/database');
-const User = require('../models/User');
 const db = {}
 
 db.connection = new Sequelize(config.database, config.username, config.password, config);
 
 // Vinculamos a nuestros modelos a DB
-db.User = require('../models/User')(db.connection, DataTypes);
-db.Address = require('../models/Address')(db.connection, DataTypes);
+db.Transporte = require('../models/Transporte')(db.connection, DataTypes);
+db.Carrier = require('../models/Carrier')(db.connection, DataTypes);
+db.Pol = require('../models/Pol')(db.connection, DataTypes);
+db.Pod = require('../models/Pod')(db.connection, DataTypes);
 
 // Asociar los modelos
-db.User.associate(db);
-db.Address.associate(db);
+db.Transporte.associate(db);
+db.Carrier.associate(db);
+db.Pol.associate(db);
+db.Pod.associate(db);
 
 module.exports = db;
