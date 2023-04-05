@@ -1,4 +1,3 @@
-# pruebaKLog
 # Prueba Técnica para KLog
 
 ### Para correr el proyecto, se recomienda correr las migraciones y los seed para poblar la base datos con sequelize-cli, sino se debe realizar un `npm install` y luego el script del package.json para correr el servidor con `npm run dev`
