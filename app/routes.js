@@ -15,7 +15,7 @@ router.get('/', (req, res) => res.json({
 
 // Transportes
 router.get('/transportes', TransporteController.getTransportes)
-router.get('/transportes/destino', TransporteController.getTransporteDestino)
+router.get('/transportes/itinerario', TransporteController.getTransporteItinerario)
 router.post('/transportes', TransporteController.postTransporte)
 
 // Carrier

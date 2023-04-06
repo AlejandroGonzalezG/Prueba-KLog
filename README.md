@@ -8,7 +8,14 @@ El repositorio realiza las siguientes acciones:
 
 - ruta : http://localhost:3000/transportes mÉtodo GET, muestra todos los "viajes" que estan en la base de datos.
 - ruta : http://localhost:3000/transportes método POST, se crea un nuevo "viaje" entregando la información necesaria.
-- ruta : http://localhost:3000/transportes/destino método GET , es construcción
+- ruta : http://localhost:3000/transportes/itinerario método GET , el endpoint devuelve como oputput: { 
+    "Origen": "",
+    "Destino": "",
+    "Naviera": "",
+    "ETD": "",
+    "ETA": ""
+    },
+    en donde como query se debe enviar el origen (pod.locode), el destino (pol.locode), la eta (eta) o el transit_time (transit_time) cada uno por separado y devolvera el output con la información correspondiente.
 
 **Rutas para controlador Carrier**
 
